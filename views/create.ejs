@@ -65,4 +65,30 @@
   </form>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.querySelector("#formulario-registro")
+
+    formulario.addEventListener("submit", (event) => {
+      event.preventDefault()
+
+      Swal.fire({
+        title: 'Restaurant',
+        text: '¿Estas seguro de proceder?',
+        icon: 'question',
+        footer: 'Ingenieria de Software IA',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#2980b9',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+        cancelButtonColor: '#bdc3c7'
+      }).then((result) =>{
+        if(result.isConfirmed){
+          formulario.submit()
+        }
+      })
+    })
+  })
+</script>
+
 <%- include('./partials/footer') %>
