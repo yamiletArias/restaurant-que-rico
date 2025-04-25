@@ -26,6 +26,7 @@
 7. Abrir el archivo .gitifnore y añadir: node_modules
 8. Construye tu repositorio (GIT)
 
+
 - codificacion -
 
 8. Acceso a la BD -> database.js
