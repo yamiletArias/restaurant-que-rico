@@ -1,0 +1,68 @@
+<%- include('./partials/header') %>
+
+<div class="mt-3">
+  <div class="alert alert-warning">
+    <span>Complete los datos solicitados</span>
+  </div>
+
+  <!-- el valor de action se debera gestionar con un enrutador - POST -->
+  <form action="/create" id="formulario-registro" autocomplete="off" method="post">
+    <div class="card">
+      <div class="card-header"><span>Campos requeridos</span></div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 mb-2">
+            <div class="form-floating">
+              <select name="categoria" id="categoria" class="form-select" required>
+                <option value=""selected disabled>Seleccione</option>
+                <% categorias.forEach(categoria=> {%>
+                  <option value=" <%= categoria.idcategoria %>"><%= categoria.categoria%></option>
+                <%})%>
+              </select>
+              <label for="categoria" class="form-label">Categoria plato</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md-8 mb-2">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre del plato">
+              <label for="nombre" class="form-label">Nombre del plato</label>
+            </div>
+          </div>
+          <div class="col-md-2 mb-2">
+            <div class="form-floating">
+              <input type="text" class="form-control text-end" id="precio" placeholder="precio" required>
+              <label for="precio" class="form-label">precio</label>
+            </div>
+          </div>
+          <div class="col-md-2 mb-2">
+            <div class="form-floating">
+              <select name="delivery" id="delivery" class="form-select">
+                <option value="S">Si</option>
+                <option value="N" selected>No</option>
+              </select>
+              <label for="nombre" class="form-label">Delivery</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md-12">
+            <div class="form-floating">
+              <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
+              <label for="descripcion">Descripcion del plato</label>
+            </div>
+          </div>
+        </div>
+      </div><!-- ./card-body-->
+      <div class="card-footer text-end">
+        <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
+        <a href="/" class="btn btn-sm btn-secundary">Cancelar</a>
+      </div><!-- ./card footer -->
+    </div>
+  </form>
+</div>
+
+<%- include('./partials/footer') %>

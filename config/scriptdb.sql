@@ -31,4 +31,12 @@ INSERT INTO platos (idcategoria, nombre, precio, delivery, descripcion)
 		(1, 'Chilcano puro', 3.5, 'N', NULL),
         (2, 'Apanado de bonito', 15, 'S', 'Incluye guarnicion de arroz y yucas');
 
-select * from platos;
+select
+	P.idplato,
+    C.idcategoria,
+    P.nombre,
+    P.precio,
+    P.delivery,
+    P.descripcion
+	from platos P
+    INNER JOIN categorias C ON P.idcategoria = C.idcategoria;
