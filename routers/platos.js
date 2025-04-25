@@ -39,7 +39,9 @@ router.get('/create', async(req, res) =>{
 // ruta recibe los datos que nos envia el formulario
 router.post('/create', async(req, res) =>{
   try{
-    res.send("GUARDADO")
+    const {categoria, nombre, precio, delivery, descripcion} = req.body
+    await db.query("INSERT INTO platos (idcategoria, nombre, precio, delivery, descripcion) VALUES (?,?,?,?,?)", [categoria, nombre, precio, delivery, descripcion])
+    res.redirect('/')
   }catch(error){
     console.error(error)
   }
