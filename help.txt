@@ -1,0 +1,31 @@
+1. Crear proyecto: npm init -y
+2. Modificar package.json > main: app.json
+3. Crear archivos .gitignore, README.md
+4. Instalar las dependencias:
+    - body-parser   : gestion de datos (form)
+    - ejs           : motor de plantilla
+    - express       : framework
+    - mysql2        : nueva version acceso datos asicrono
+    - nodemon       : inicia el servidor web
+    npm install d1 d2 dN
+    Luego de la instalacion verifique "dependencias" en package.json
+5. Estructura de directorios:
+   config / public>js+css / routers / views>partials>header.ejs+footer.ejs
+6. Agregar  : database.js
+   config   :
+      css   : estilos.css
+      js    : funciones.js
+   routers  : categorias.js, platos.js
+   views    :
+      partials:
+        header.ejs
+        footer.ejs
+      index.ejs
+      create.ejs
+      edit.ejs
+7. Abrir el archivo .gitifnore y añadir: node_modules
+8. Construye tu repositorio (GIT)
+
+- codificacion -
+
+8. Acceso a la BD -> database.js
